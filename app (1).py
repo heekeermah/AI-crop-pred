@@ -24,9 +24,9 @@ using measured soil and environmental conditions.
 )
 
 
-N = st.number_input("Nitrogen (N)", min_value=0.0, max_value=120.00, value=0.00, step=1)
-P = st.number_input("Phosphorus (P)", min_value=5.0, max_value=80.00, value=5.00, step=1)
-K = st.number_input("Potassium (K)", min_value=5.0, max_value=85.00, value=5.00, step=1)
+N = st.number_input("Nitrogen (N)", min_value=0, max_value=120, value=0, step=1)
+P = st.number_input("Phosphorus (P)", min_value=5, max_value=80, value=5, step=1)
+K = st.number_input("Potassium (K)", min_value=5, max_value=85, value=5, step=1)
 
 temperature = st.number_input(
     "Temperature (°C)",
@@ -80,7 +80,7 @@ if st.button("Generate Crop Recommendation"):
 
     results = (
         pd.DataFrame({
-            "Crop":crops,
+            "Crop": crops,
             "Probability":probabilities
         })
         .sort_values(
