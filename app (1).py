@@ -24,28 +24,28 @@ using measured soil and environmental conditions.
 )
 
 
-N = st.number_input("Nitrogen (N)", min_value=0.0)
-P = st.number_input("Phosphorus (P)", min_value=0.0)
-K = st.number_input("Potassium (K)", min_value=0.0)
+N = st.number_input("Nitrogen (N)", min_value=0.0, max_value=120.00, value=0.00, step=1)
+P = st.number_input("Phosphorus (P)", min_value=5.0, max_value=80.00, value=5.00, step=1)
+K = st.number_input("Potassium (K)", min_value=5.0, max_value=85.00, value=5.00, step=1)
 
 temperature = st.number_input(
     "Temperature (°C)",
-    value=25.0
+    min_value=10.0, max_value=35.00, value=10.00, step=0.01 
 )
 
 humidity = st.number_input(
     "Humidity (%)",
-    value=80.0
+   min_value=14.0, max_value=95.00, value=14.00, step=0.01
 )
 
 ph = st.number_input(
     "Soil pH",
-    value=6.5
+    min_value=5.0, max_value=9.00, value=5.00, step=0.01
 )
 
 rainfall = st.number_input(
     "Rainfall (mm)",
-    value=100.0
+    min_value=20.0, max_value=300.00, value=20.00, step=0.01
 )
 
 soil = st.selectbox(
